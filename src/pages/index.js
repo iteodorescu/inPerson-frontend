@@ -3,13 +3,18 @@ import React from "react"
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import classNames from 'classnames';
 
 
 import Calendar from '../components/Calendar'
 import Navbar from "../components/Navbar";
 import Menu from "../components/Menu";
 
-const drawerWidth = 240;
+import { drawerWidth } from '../consts/ui'
+
+// dummy data
+import { user } from '../consts/dummydata/user'
+
 
 const styles = theme => ({
   root: {
@@ -22,34 +27,87 @@ const styles = theme => ({
     width: drawerWidth,
     flexShrink: 0,
   },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
   drawerPaper: {
     width: drawerWidth,
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
   },
   toolbar: theme.mixins.toolbar,
 });
 
-function IndexPage(props) {
-  const { classes } = props;
+class IndexPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: user,
+            openDrawer: false
+        }
+    }
 
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Navbar classes={classes} />
-      <Menu classes = {classes}/>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Calendar/>
-      </main>
-    </div>
-  );
+    componentDidUpdate(prevProps) {
+        if (prevProps.user !== this.props.user) {
+            this.setState({user: this.props.user})
+        }
+    }
+
+    handleDrawerOpen = () => {
+        this.setState({ openDrawer: true })
+    };
+    
+    handleDrawerClose = () => {
+        this.setState({ openDrawer: false })
+    };
+
+    render() {
+        const { classes, theme } = this.props;
+        return (
+            <div className={classes.root}>
+                <CssBaseline />
+                <Navbar classes={classes} 
+                        theme={theme}
+                        user={this.state.user} 
+                        handleDrawerOpen={this.handleDrawerOpen} 
+                        open={this.state.openDrawer}/>
+                <Menu classes = {classes} 
+                        user={this.state.user} 
+                        theme={theme}
+                        handleDrawerClose={this.handleDrawerClose} 
+                        open={this.state.openDrawer}/>
+                <main className={classNames(classes.content, {
+                        [classes.contentShift]: this.state.openDrawer,
+                    })}>
+                    <div className={classes.drawerHeader} />
+                    <Calendar/>
+                </main>
+            </div>
+        );
+    }
 }
 
 IndexPage.propTypes = {
   classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(IndexPage);
+export default withStyles(styles, { withTheme: true })(IndexPage);

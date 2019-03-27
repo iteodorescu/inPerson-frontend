@@ -25,14 +25,15 @@ frontend with ReactJS
 * create and document mock api 
     * ~generate users~ - done
     * ~API doc google drive~ - done
-    * generate the mock server      -------------/\\-/\\-/\\-/\\-> today
+    * generate the mock server
 
 ## personal deadlines
-### Tuesday - complete non functional side bar UI
-* side menu - make it hideable
+### Wednesday - complete non functional side bar UI
+* side menu
+    * ~make it hideable~
     * my events
         * class search -> just make sure it console.logs correctly
-        * add custom event
+        * add custom event (no persisting)
 
     * my followers
         * follower list (hardcoded) display + remove button + popup
@@ -43,13 +44,13 @@ frontend with ReactJS
     * groups
         * group list (hardcoded) display
 
-### Wednesday - complete non functional navbar UI
+### Thursday - complete non functional navbar UI
 * navbar
     * search -> just make sure it console.logs correctly
         * display hardcoded list + follow button
     * follow requests (hardcoded) with accept, reject buttons
     * notifications: follow requests accepted (hardcoded)
-* implement mock api
+* implement mock api server
 
 ### Thursday - add queries to mock API
 ### Friday - add queries to mock API
