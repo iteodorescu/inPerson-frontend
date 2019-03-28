@@ -5,7 +5,8 @@ frontend with ReactJS
 * complete mock ui with local data
     * ~calendar, side menu, navbar~ - done
     * side menu functionality
-        * display groups                    
+        * groups
+            * ~display groups~                    
             * create group                  
             * add group event display >>>>> wednesday      
         * display followers                 
@@ -27,8 +28,10 @@ frontend with ReactJS
     * ~API doc google drive~ - done
     * generate the mock server
 
+* make drawer full screen on mobile
+
 ## personal deadlines
-### Wednesday - complete non functional side bar UI
+### by Friday - complete non functional UI
 * side menu
     * ~make it hideable~
     * my events
@@ -36,24 +39,31 @@ frontend with ReactJS
         * add custom event (no persisting)
 
     * my followers
-        * follower list (hardcoded) display + remove button + popup
+        * ~follower list (hardcoded) display~
+        * ~remove button + popup~
+        * remove follower (no persisting)
     
     * following
-        * following list (hardcoded) display + remove button + popup
+        * ~following list (hardcoded) display~
+        * ~remove button + popup~
+        * remove following (no persisting)
     
     * groups
-        * group list (hardcoded) display
-
-### Thursday - complete non functional navbar UI
+        * ~group list (hardcoded) display~
+        * ~display more info on click~
+        * create groups form
+        * new group display (no persisting)
 * navbar
     * search -> just make sure it console.logs correctly
         * display hardcoded list + follow button
     * follow requests (hardcoded) with accept, reject buttons
     * notifications: follow requests accepted (hardcoded)
-* implement mock api server
 
-### Thursday - add queries to mock API
-### Friday - add queries to mock API
+
+### Weekend
+* implement mock api server
+* add queries to mock API
+* include sample JSONs in REST API file
 
 
 

@@ -74,6 +74,8 @@ class IndexPage extends React.Component {
     handleDrawerOpen = () => {
         this.setState({ openDrawer: true })
     };
+
+    handleCloseAlert = () => {}
     
     handleDrawerClose = () => {
         this.setState({ openDrawer: false })

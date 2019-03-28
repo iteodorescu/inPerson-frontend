@@ -3,16 +3,15 @@ import React from "react"
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
+
+import GroupsDisplay from './menu/GroupsDisplay'
+import EventsDisplay from './menu/EventsDisplay'
+import FollowerDisplay from './menu/FollowerDisplay'
+import FollowingDisplay from './menu/FollowingDisplay'
 
 import { drawerWidth } from '../consts/ui'
 
@@ -72,23 +71,14 @@ class Menu extends React.Component {
                     </IconButton>
                 </div>
                 <Divider />
-                <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                    ))}
-                </List>
+                <EventsDisplay user={this.state.user}/>
+                <GroupsDisplay groups={this.state.user['groups']} 
+                                netid={this.state.user['netid']}
+                                first_name={this.state.user['first_name']}
+                                last_name={this.state.user['last_name']}
+                                class_year={this.state.user['class_year']}/>
+                <FollowerDisplay user={this.state.user}/>
+                <FollowingDisplay user={this.state.user}/>
             </Drawer>
         );
     }

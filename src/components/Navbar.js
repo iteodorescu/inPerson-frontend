@@ -14,7 +14,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import SearchBar from './SearchBar';
+import SearchBar from './navbar/SearchBar';
 
 import { drawerWidth } from '../consts/ui'
 
