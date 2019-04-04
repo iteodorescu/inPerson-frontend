@@ -51,6 +51,8 @@ class Menu extends React.Component {
         }
     }
 
+    componentWillMount
+
     render() {
         const { classes, theme } = this.props;
         const { open } = this.state;

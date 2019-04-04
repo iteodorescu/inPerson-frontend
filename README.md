@@ -3,17 +3,17 @@ frontend with ReactJS
 
 ## todo general
 * complete mock ui with local data
-    * ~calendar, side menu, navbar~ - done
+    * ~calendar, side menu, navbar~ 
     * side menu functionality
         * groups
             * ~display groups~                    
             * create group                  
-            * add group event display >>>>> wednesday      
+            * add group event display    
         * display followers                 
             * remove follower               
-        * add personal event button   >>>>> wednesday 
-            * personal event form     >>>>> wednesday
-        * make sidebar closeable
+        * add personal event button 
+            * personal event form  
+        * ~make sidebar closeable~
 
     * navbar functionality
         * search                            
@@ -21,17 +21,18 @@ frontend with ReactJS
             * search bar displays          
         * follow requests -> have to implement api first
 
-    * ~calendar moving between weeks~ - done
+    * ~calendar moving between weeks~
 
 * create and document mock api 
-    * ~generate users~ - done
-    * ~API doc google drive~ - done
+    * ~generate users~ 
+    * ~API doc google drive~
     * generate the mock server
 
 * make drawer full screen on mobile
+* notifications: follow requests accepted
 
 ## personal deadlines
-### by Friday - complete non functional UI
+### by Weekend
 * side menu
     * ~make it hideable~
     * my events
@@ -57,13 +58,12 @@ frontend with ReactJS
     * search -> just make sure it console.logs correctly
         * display hardcoded list + follow button
     * follow requests (hardcoded) with accept, reject buttons
-    * notifications: follow requests accepted (hardcoded)
+    
 
-
-### Weekend
 * implement mock api server
 * add queries to mock API
 * include sample JSONs in REST API file
+* landing page (before login)
 
 
 

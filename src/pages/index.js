@@ -14,6 +14,7 @@ import { drawerWidth } from '../consts/ui'
 
 // dummy data
 import { user } from '../consts/dummydata/user'
+import axios from "axios";
 
 
 const styles = theme => ({
@@ -65,10 +66,10 @@ class IndexPage extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.user !== this.props.user) {
-            this.setState({user: this.props.user})
-        }
+    componentDidMount() {
+        // axios.get('localhost:8080/api/recurrevent/user', {user: {userid: 1}})
+        // .then((res) => {console.log(res.data)})
+        // .catch((err) => console.log(err))
     }
 
     handleDrawerOpen = () => {

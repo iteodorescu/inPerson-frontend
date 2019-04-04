@@ -106,12 +106,13 @@ class Navbar extends React.Component {
     state = {
         anchorEl: null,
         mobileMoreAnchorEl: null,
-        open: this.props.open
+        open: this.props.open,
+        user: this.props.user
     };
     
     componentDidUpdate(prevProps) {
-        if (prevProps.open !== this.props.open) {
-            this.setState({open: this.props.open})
+        if (prevProps.open !== this.props.open || prevProps.user != this.props.user) {
+            this.setState({open: this.props.open, user: this.props.user})
         }
     }
 
